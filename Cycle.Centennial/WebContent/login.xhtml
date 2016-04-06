@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cycle.Centennial College</title>
+    <!-- Core Bootstrap -->
+    <h:outputStylesheet library="css" name="bootstrap.css" />
+    <!-- Navbar CSS -->
+    <h:outputStylesheet library="css" name="navbar.css" />
+    <!-- Core CSS -->
+    <h:outputStylesheet library="css" name="main.css" />    
+</h:head>
+<h:body>
+    <div class="cover">
+		<!-- Navbar -->
+		<div class="navwrapper">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    		<span class="sr-only">Toggle navigation</span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                		</button>
+                		<a class="navbar-brand" href="login.xhtml"><img id="brand-image" src="./resources/img/cycleCentennial-logo.png"/></a>
+					</div><!-- End of navbar-header div class -->
+					<div id="navbar" class="navbar navbar-default">
+            		<ul class="nav navbar-nav navbar-right">
+              			<li><a href="register.xhtml"><h5>Join Cycle Centennial</h5></a></li>
+              		</ul>
+					</div><!-- End of navbar navbar-default div class "Register" -->
+				</div><!-- End of container-fluid div class -->
+		    </nav><!-- End of navbar navbar-default div class -->
+		<!-- Sign In -->
+			<br /><br /><br /><br />
+			<div class="container">
+				<h:form class="form-signin">
+        			<h3 class="form-signin-heading" style="text-align: center">Login Cycle Centennial</h3><br />
+       				<h5><h:outputText value="Username"  /></h5>
+        			<h:inputText id="username" value="#{login.user}" placeholder="username" class="form-control"><f:validateRequired /></h:inputText>
+        			<h:message for="username" style="color:red"></h:message>
+         
+        			<h5><h:outputText value="Password"  /></h5>
+        			<h:inputSecret id="password" value="#{login.pwd}" placeholder="password" class="form-control"><f:validateRequired /></h:inputSecret>
+        			<h:message for="password" style="color:red"></h:message>
+        			
+         
+        			<h:commandButton action="#{login.validateUsernamePassword}" value="Login" class="btn btn-lg btn-primary btn-block"></h:commandButton>
+    			</h:form><!-- End of Form -->
+			</div><!-- End of container div class -->
+		</div><!-- End of navwrapper div class -->
+	</div><!-- End of cover div class -->
+</h:body>
+</html>
