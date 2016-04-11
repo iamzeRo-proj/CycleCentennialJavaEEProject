@@ -7,7 +7,7 @@
 <h:head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Register Account</title>
+    <title>Cycle.Centennial College</title>
     <!-- Core Bootstrap -->
     <h:outputStylesheet library="css" name="bootstrap.css" />
     <!-- Navbar CSS -->
@@ -16,6 +16,98 @@
     <h:outputStylesheet library="css" name="main.css" />    
 </h:head>
 <h:body>
-	
+    <div class="cover">
+		<!-- Navbar -->
+		<div class="navwrapper">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    		<span class="sr-only">Toggle navigation</span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                		</button>
+                		<a class="navbar-brand" href="login.xhtml"><img id="brand-image" src="./resources/img/cycleCentennial-logo.png"/></a>
+					</div><!-- End of navbar-header div class -->
+					<div id="navbar" class="navbar navbar-default">
+            		<ul class="nav navbar-nav">
+              			<li><a href="login.xhtml"><h5>Home</h5></a></li>
+              		</ul>
+					</div><!-- End of navbar navbar-default div class "Register" -->
+				</div><!-- End of container-fluid div class -->
+		    </nav><!-- End of navbar navbar-default div class -->
+		<!-- Sign In -->
+			<br /><br /><br /><br />
+			<div class="container" id="register">
+				<h2>Register CycleCentennial</h2><br />
+				<f:view>  
+        			<h:form id="registerForm">  
+            			<table>  
+                			<tr>  
+                    			<td><h:outputText value="Student Number: " /></td>  
+                    			<td><h:inputText id="studentno" value="#{user.studentno}"  
+                         		   required="true" requiredMessage="Enter Student Number" /></td>  
+                   				<td><h:message for="studentno" style="color:red" /></td>  
+                			</tr>
+                			<tr>  
+                    			<td><h:outputText value="First Name: " /></td>  
+                    			<td><h:inputText id="fname" value="#{user.fname}"  
+                         		   required="true" requiredMessage="Enter First Name" /></td>  
+                   				<td><h:message for="fname" style="color:red" /></td>  
+                			</tr>
+                			<tr>  
+                    			<td><h:outputText value="Last Name: " /></td>  
+                    			<td><h:inputText id="lname" value="#{user.lname}"  
+                         		   required="true" requiredMessage="Enter Last Name" /></td>  
+                   				<td><h:message for="lname" style="color:red" /></td>  
+                			</tr>
+                			<tr>  
+                    			<td><h:outputText value="Address: " /></td>  
+                    			<td><h:inputText id="address" value="#{user.address}"  
+                         		   required="true" requiredMessage="Enter Address" /></td>  
+                   				<td><h:message for="address" style="color:red" /></td>  
+                			</tr>
+                			<tr>  
+                    			<td><h:outputText value="City: " /></td>  
+                    			<td><h:inputText id="city" value="#{user.city}"  
+                         		   required="true" requiredMessage="Enter City" /></td>  
+                   				<td><h:message for="city" style="color:red" /></td>  
+                			</tr>
+                			<tr>  
+                    			<td><h:outputText value="Province: " /></td>  
+                    			<td><h:inputText id="province" value="#{user.province}"  
+                         		   required="true" requiredMessage="Enter Province" /></td>  
+                   				<td><h:message for="province" style="color:red" /></td>  
+                			</tr>
+                			<tr>  
+                    			<td><h:outputText value="Postal Code: " /></td>  
+                    			<td><h:inputText id="postalcode" value="#{user.postalcode}"  
+                         		   required="true" requiredMessage="Enter Postal Code" /></td>  
+                   				<td><h:message for="postalcode" style="color:red" /></td>  
+                			</tr>
+                			<tr>  
+                    			<td><h:outputText value="Email ID:" /></td>  
+                    			<td><h:inputText id="email" value="#{user.email}"  
+                            		required="true" requiredMessage="Enter Centnnial Email" /></td>  
+                    			<td><h:message for="email" style="color:red" /></td>  
+                			</tr>
+                			<tr>  
+                    			<td><h:outputText value="Password :" /></td>  
+                    			<td><h:inputSecret id="psw" value="#{user.password}"  
+                           			required="true" requiredMessage="Please enter your password" /></td>  
+                    			<td><h:message for="psw" style="color:red" /></td>  
+                			</tr>
+                			<tr>  
+                    			<td />  
+                    			<td><h:commandButton value="Register" action="#{user.add}" /></td>  
+                			</tr>     
+              			</table>  
+        			</h:form><!-- End of form -->  
+    			</f:view><!-- End of view -->
+			</div><!-- End of container div class -->
+		</div><!-- End of navwrapper div class -->
+	</div><!-- End of cover div class -->
 </h:body>
 </html>
