@@ -88,6 +88,12 @@
                    				<td><h:message for="postalcode" style="color:red" /></td>  
                 			</tr>
                 			<tr>  
+                    			<td><h:outputText value="Contact:" /></td>  
+                    			<td><h:inputText id="contact" value="#{user.contact}"  
+                            		required="true" requiredMessage="Enter Contact Number" /></td>  
+                    			<td><h:message for="contact" style="color:red" /></td>  
+                			</tr>
+                			<tr>  
                     			<td><h:outputText value="Email ID:" /></td>  
                     			<td><h:inputText id="email" value="#{user.email}"  
                             		required="true" requiredMessage="Enter Centnnial Email" /></td>  
