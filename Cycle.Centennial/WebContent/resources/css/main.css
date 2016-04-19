@@ -84,3 +84,8 @@ body{
     background-size: cover;
     -o-background-size: cover;
 }
+
+#socialMedia		{ float:right; margin:0 5px 0 0; }
+#socialMedia p		{ color:#ffffff; font-size:14px; margin:4px 5px 4px 0;}
+#socialMedia img	{ width:35px; height:35px; margin:4px 30px 4px 0;}
+#socialMedia ul li 	{display:inline;} 
