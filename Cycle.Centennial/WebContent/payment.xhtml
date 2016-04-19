@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+
+<h:head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Cycle.Centennial College</title>
+	<!-- Core Bootstrap -->
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<!-- Navbar CSS -->
+	<h:outputStylesheet library="css" name="navbar.css" />
+	<!-- Core CSS -->
+	<h:outputStylesheet library="css" name="main.css" />
+</h:head>
+<h:body>
+	<div class="cover">
+		<!-- Navbar -->
+		<div class="navwrapper">
+			<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="login.xhtml"><img
+						id="brand-image" src="./resources/img/cycleCentennial-logo.png" /></a>
+				</div>
+				<!-- End of navbar-header div class -->
+				<div id="navbar" class="navbar navbar-default">
+					<ul class="nav navbar-nav">
+						<li><a href="login.xhtml"><h5>Home</h5></a></li>
+					</ul>
+				</div>
+				<!-- End of navbar navbar-default div class "Register" -->
+			</div>
+			<!-- End of container-fluid div class --> </nav>
+			<!-- End of navbar navbar-default div class -->
+			<!-- Sign In -->
+			<br /> <br /> <br /> <br />
+			<!--Payment form-->
+			<div class="container" id="payment">
+				<h2>Payment</h2>
+				<f:view>
+					<h:form>
+
+						<table>
+
+							<tr>
+								<td><h:outputText value="* Bike Type: " /></td>
+								<td><h:selectOneMenu value="#{payment.bikeType}"
+										style="color:black">
+										<f:selectItem itemValue="Touring" itemLabel="Touring Bicycle" />
+										<f:selectItem itemValue="Sports" itemLabel="Sports Bicycle" />
+										<f:selectItem itemValue="Road" itemLabel="Road Bicycle" />
+									</h:selectOneMenu></td>
+							</tr>
+
+							<tr>
+								<td><h:outputText id="date" value="* Renting Dates: " /></td>
+								<td><h:inputText value="#{payment.date}"
+										style="color:black" required="true"
+										pt:placeholder="How many days want to rent?" /></td>
+
+							</tr>
+
+							<tr>
+								<td><h:outputText value="* Card Holder Name: " /></td>
+								<td><h:inputText value="#{payment.holderName}"
+										style="color:black" required="true" /></td>
+							</tr>
+
+							<tr>
+								<td><h:outputText value="* Card Number: " /></td>
+								<td><h:inputText value="#{payment.ccNumber}"
+										style="color:black" required="true" /></td>
+							</tr>
+							<tr>
+								<td><h:outputText value="* Expiry Date: " /></td>
+								<td><h:inputText value="#{payment.ccExpiryDate}"
+										style="color:black" required="true" 
+										pt:placeholder="MM/YY"/></td>
+							</tr>
+
+							<tr>
+								<td><h:outputText value="* Card Type: " /></td>
+								<td><h:selectOneRadio value="#{payment.ccType}">
+										<f:selectItem itemValue="Master Card" itemLabel="Master Card" />
+										<f:selectItem itemValue="Visa" itemLabel="Visa" />
+										<f:selectItem itemValue="American Express" itemLabel="American Express" />
+									</h:selectOneRadio></td>
+							</tr>
+
+
+
+
+
+						</table>
+						<h:commandButton value="Check out" action="#{payment.insertToDB}" />
+
+					</h:form>
+					<!-- End of form -->
+				</f:view>
+				<!-- End of view -->
+			</div>
+			<!-- End of container div class -->
+		</div>
+		<!-- End of navwrapper div class -->
+	</div>
+	<!-- End of cover div class -->
+</h:body>
+</html>
