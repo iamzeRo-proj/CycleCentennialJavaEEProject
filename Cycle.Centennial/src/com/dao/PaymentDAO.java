@@ -14,7 +14,7 @@ public class PaymentDAO {
 
 		try {
 			con = DataConnect.getConnection();
-			String query = "INSERT INTO memberinfo (ccNumber,memberId,ccType,ccExpiryDate,cardHolderName,amount,paymentId)" 
+			String query = "INSERT INTO payinfo (ccNumber,memberId,ccType,ccExpiryDate,cardHolderName,amount,paymentId)" 
 			+ "Values(?,?,?,?,?,?,?)";
 			ps = con.prepareStatement(query);
 			
@@ -25,7 +25,7 @@ public class PaymentDAO {
 			ps.setString(5, cardHolderName);
 			ps.setDouble(6, amount);
 			ps.setInt(7, paymentId);
-			ResultSet rs = ps.executeQuery();
+			int rs = ps.executeUpdate(query);
 
 			
 					

@@ -131,12 +131,14 @@ public class PaymentBean {
 		this.amount = calAmount;
 		this.paymentId=GeneratePaymentID();
 
-		// HttpSession session = SessionBean.getSession();
-		// userId = (Integer) session.getAttribute("userid");
-		// userName=session.getAttribute("userName").toString();
+		 HttpSession session = SessionBean.getSession();
+//		 userId = (Integer) session.getAttribute("userid");
+		int userid = 300760378;
+		String userName = "wbl";
+//		 userName=session.getAttribute("userName").toString();
 
-		// PaymentDAO.InsertToPayinfo(ccNumber, userId, ccType, ccExpiryDate,
-		// holderName, amount, paymentId);
+		 PaymentDAO.InsertToPayinfo(ccNumber, userId, ccType, ccExpiryDate,
+		 holderName, amount, paymentId);
 
 		return "receipt";
 	}

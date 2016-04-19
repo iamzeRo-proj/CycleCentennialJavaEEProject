@@ -7,7 +7,7 @@ public class DataConnect {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/mybike", "root", "hujia1995");
+                    "jdbc:mysql://localhost:3306/mybike", "root", "giantgiant");
             return con;
         } catch (Exception ex) {
             System.out.println("Database.getConnection() Error -->"
