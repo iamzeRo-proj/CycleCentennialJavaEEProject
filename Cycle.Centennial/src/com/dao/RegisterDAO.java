@@ -35,7 +35,7 @@ public class RegisterDAO {
 			ps.setString(12, zipcode);
 			ps.setString(13, password);
 
-			ResultSet rs = ps.executeQuery();
+			int success = ps.executeUpdate();
 
 		
 			}

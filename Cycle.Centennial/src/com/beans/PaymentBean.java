@@ -23,8 +23,7 @@ public class PaymentBean {
 	private int paymentId;
 	private String userName;
 
-	private String date;
-	private String bikeType;
+	private String memberShipType;
 
 	public String getUserName() {
 		return userName;
@@ -34,12 +33,12 @@ public class PaymentBean {
 		this.userName = userName;
 	}
 
-	public String getBikeType() {
-		return bikeType;
+	public String getMemberShipType() {
+		return memberShipType;
 	}
 
-	public void setBikeType(String bikeType) {
-		this.bikeType = bikeType;
+	public void setMemberShipType(String memberShipType) {
+		this.memberShipType = memberShipType;
 	}
 
 	public int getCcNumber() {
@@ -66,13 +65,6 @@ public class PaymentBean {
 		this.ccType = ccType;
 	}
 
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
 
 	public String getHolderName() {
 		return holderName;
@@ -111,16 +103,15 @@ public class PaymentBean {
 
 	public String insertToDB() {
 		double calAmount;
-		String date = getDate();
-		switch (bikeType) {
-		case "Touring":
-			calAmount = 1 * Double.parseDouble(date);
+		switch (memberShipType) {
+		case "Weekly":
+			calAmount = 3.5;
 			break;
-		case "Sports":
-			calAmount = 2 * Double.parseDouble(date);
+		case "Monthly":
+			calAmount = 2.5;
 			break;
-		case "Road":
-			calAmount = 3 * Double.parseDouble(date);
+		case "Annual":
+			calAmount = 1.5; 
 			break;
 
 		default:
@@ -135,8 +126,8 @@ public class PaymentBean {
 		// userId = (Integer) session.getAttribute("userid");
 		// userName=session.getAttribute("userName").toString();
 
-		// PaymentDAO.InsertToPayinfo(ccNumber, userId, ccType, ccExpiryDate,
-		// holderName, amount, paymentId);
+		int userId= 300748503;
+		 PaymentDAO.InsertToPayinfo(ccNumber, userId, ccType, ccExpiryDate,holderName, amount, paymentId);
 
 		return "receipt";
 	}

@@ -55,22 +55,16 @@
 						<table>
 
 							<tr>
-								<td><h:outputText value="* Bike Type: " /></td>
-								<td><h:selectOneMenu value="#{payment.bikeType}"
+								<td><h:outputText value="* Membership Type: " /></td>
+								<td><h:selectOneMenu value="#{payment.memberShipType}"
 										style="color:black">
-										<f:selectItem itemValue="Touring" itemLabel="Touring Bicycle" />
-										<f:selectItem itemValue="Sports" itemLabel="Sports Bicycle" />
-										<f:selectItem itemValue="Road" itemLabel="Road Bicycle" />
+										<f:selectItem itemValue="Weekly" itemLabel="Weekly Membership" />
+										<f:selectItem itemValue="Monthly" itemLabel="Monthly Membership" />
+										<f:selectItem itemValue="Annual" itemLabel="Annual Membership" />
 									</h:selectOneMenu></td>
 							</tr>
 
-							<tr>
-								<td><h:outputText id="date" value="* Renting Dates: " /></td>
-								<td><h:inputText value="#{payment.date}"
-										style="color:black" required="true"
-										pt:placeholder="How many days want to rent?" /></td>
 
-							</tr>
 
 							<tr>
 								<td><h:outputText value="* Card Holder Name: " /></td>
