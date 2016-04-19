@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+
+   <h:head>
+   <title>Receipt</title>
+   </h:head>
+   
+   <h:body>
+   Bike Type: <h:outputText value="#{payment.bikeType}" /><br />
+   date: <h:outputText value="#{payment.date}" /><br />
+   Card Holder Name: <h:outputText value="#{payment.holderName}" /><br />
+   Amount: <h:outputText value="#{payment.amount}" /><br />
+   Card Number:<h:outputText value="#{payment.ccNumber}" /><br />
+   Expiry Date:<h:outputText value="#{payment.ccExpiryDate}" /><br />
+   Card Type:<h:outputText value="#{payment.ccType}" /><br />
+   Payment ID:<h:outputText value="#{payment.paymentId}" /><br />
+   
+   
+   </h:body>
+</html>
