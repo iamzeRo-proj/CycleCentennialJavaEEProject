@@ -1,3 +1,4 @@
+<%@page import="com.dao.BikeInfoDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -59,15 +60,17 @@
   
   
   <!-- Reserver Bike -->
+  <%BikeInfoDAO bikeDao = new BikeInfoDAO(); %>
 Reserve Bike: 
-<select>
-  <option value="pro">Progress</option>
-  <option value="ash">Ashtonbee</option>
-  <option value="morning">Morningside</option>
+<form action="/Cycle.Centennial/ReserveBikeServlet" method = "post">
+<select name="location">
+  <option value="progress">Progress</option>
+  <option value="ashtonbeesh">Ashtonbee</option>
+  <option value="morningside">Morningside</option>
 </select>
 <button type="submit" value="Submit">Submit</button><!-- End Reserve Bike -->
 <br>
-
+</form>
 <!-- Center Container -->
 <table align="center">
 	<tr><!-- Station Header -->
@@ -85,24 +88,27 @@ Reserve Bike:
 	<tr>
 		<td>
 			Total Bikes at this Station:
+			<% 			
+		out.println(bikeDao.getBikeInfo("progress").size());
+		%>
 <br>  
-Available Bikes:
+Available Bikes:<% out.println(bikeDao.getBikeInfo("available","progress").size()); %>
 <br>
-Out of Service:
+Out of Service:<% out.println(bikeDao.getBikeInfo("out","progress").size()); %>
 </td>
 <td>
-Total Bikes at this Station:
+Total Bikes at this Station:<% out.println(bikeDao.getBikeInfo("ashtonbee").size()); %>
 <br>  
-Available Bikes:
+Available Bikes:<% out.println(bikeDao.getBikeInfo("available","ashtonbee").size()); %>
 <br>
-Out of Service:
+Out of Service:<% out.println(bikeDao.getBikeInfo("out","ashtonbee").size()); %>
 </td>
 <td>
-Total Bikes at this Station:
+Total Bikes at this Station:<% out.println(bikeDao.getBikeInfo("morningside").size()); %>
 <br>  
-Available Bikes:
+Available Bikes:<% out.println(bikeDao.getBikeInfo("available","morningside").size()); %>
 <br>
-Out of Service:
+Out of Service:<% out.println(bikeDao.getBikeInfo("out","morningside").size()); %>
 </td>
 </tr>
 </table><!-- End Center Container -->
