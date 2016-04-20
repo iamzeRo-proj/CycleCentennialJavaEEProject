@@ -7,108 +7,102 @@
 
 
 <h:head>
+	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Cycle.Centennial College</title>
 	<!-- Core Bootstrap -->
 	<h:outputStylesheet library="css" name="bootstrap.css" />
 	<!-- Navbar CSS -->
-	<h:outputStylesheet library="css" name="navbar.css" />
+	<h:outputStylesheet library="css" name="navbar-alt.css" />
 	<!-- Core CSS -->
 	<h:outputStylesheet library="css" name="main.css" />
 </h:head>
 <h:body>
-	<div class="cover">
+	<div id="register">
 		<!-- Navbar -->
 		<div class="navwrapper">
 			<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="login.xhtml"><img
-						id="brand-image" src="./resources/img/cycleCentennial-logo.png" /></a>
-				</div>
-				<!-- End of navbar-header div class -->
-				<div id="navbar" class="navbar navbar-default">
-					<ul class="nav navbar-nav">
-						<li><a href="login.xhtml"><h5>Home</h5></a></li>
-					</ul>
-				</div>
-				<!-- End of navbar navbar-default div class "Register" -->
-			</div>
-			<!-- End of container-fluid div class --> </nav>
-			<!-- End of navbar navbar-default div class -->
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    		<span class="sr-only">Toggle navigation</span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                		</button>
+                		<a class="navbar-brand" href="login.xhtml"><img id="brand-image" src="./resources/img/cycleCentennial-logo.png"/></a>
+                		<ul class="nav navbar-nav">
+                			<li><a href="/Cycle.Centennial/faces/admin.xhtml"><h5>Home</h5></a></li>
+                			<li><a href="/Cycle.Centennial/StationMap.jsp"><h5>Reserve Bike</h5></a></li>
+              				<li><a href="about.html"><h5>About</h5></a></li>
+                		</ul>
+					</div><!-- End of navbar-header div class -->
+				</div><!-- End of container-fluid div class -->
+		    </nav><!-- End of navbar navbar-default div class -->
 			<!-- Sign In -->
-			<br /> <br /> <br /> <br />
+			<br /> <br />
 			<!--Payment form-->
-			<div class="container" id="payment">
-				<h2>Payment</h2>
-				<f:view>
+			<div class="col-md-6">
+				<div class="container" id="payment">
+				<h2>Select membership and checkout.</h2><br />
 					<h:form>
-
 						<table>
-
 							<tr>
 								<td><h:outputText value="* Membership Type: " /></td>
-								<td><h:selectOneMenu value="#{payment.memberShipType}"
+								<td><h:selectOneMenu value="#{payment.memberShipType}" class="form-control"
 										style="color:black">
 										<f:selectItem itemValue="Weekly" itemLabel="Weekly Membership" />
 										<f:selectItem itemValue="Monthly" itemLabel="Monthly Membership" />
 										<f:selectItem itemValue="Annual" itemLabel="Annual Membership" />
 									</h:selectOneMenu></td>
 							</tr>
-
-
-
+							<tr><td><br></br></td></tr>
 							<tr>
 								<td><h:outputText value="* Card Holder Name: " /></td>
-								<td><h:inputText value="#{payment.holderName}"
+								<td><h:inputText value="#{payment.holderName}" class="form-control" pt:placeholder="Enter Card Holder Name"
 										style="color:black" required="true" /></td>
 							</tr>
-
+							<tr><td><br></br></td></tr>
 							<tr>
 								<td><h:outputText value="* Card Number: " /></td>
-								<td><h:inputText value="#{payment.ccNumber}"
+								<td><h:inputText value="#{payment.ccNumber}" class="form-control" pt:placeholder="Enter Card Number"
 										style="color:black" required="true" /></td>
 							</tr>
+							<tr><td><br></br></td></tr>
 							<tr>
 								<td><h:outputText value="* Expiry Date: " /></td>
-								<td><h:inputText value="#{payment.ccExpiryDate}"
+								<td><h:inputText value="#{payment.ccExpiryDate}" class="form-control" 
 										style="color:black" required="true" 
 										pt:placeholder="MM/YY"/></td>
 							</tr>
-
+							<tr><td><br></br></td></tr>
 							<tr>
 								<td><h:outputText value="* Card Type: " /></td>
-								<td><h:selectOneRadio value="#{payment.ccType}">
+								<td><h:selectOneRadio value="#{payment.ccType}" class="form-control">
 										<f:selectItem itemValue="Master Card" itemLabel="Master Card" />
 										<f:selectItem itemValue="Visa" itemLabel="Visa" />
 										<f:selectItem itemValue="American Express" itemLabel="American Express" />
 									</h:selectOneRadio></td>
 							</tr>
-
-
-
-
-
-						</table>
+						</table><br />
 						<h:commandButton value="Check out" action="#{payment.insertToDB}" />
-
 					</h:form>
 					<!-- End of form -->
-				</f:view>
-				<!-- End of view -->
 			</div>
-			<!-- End of container div class -->
+			<!-- Footer -->	
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+				<div id="socialMedia-alt2">
+					<ul>
+						<li><p>Let's get social !</p></li>
+						<li><a href="http://www.facebook.com"><img src="./resources/img/facebook.png"/></a></li>
+						<li><a href="http://www.twitter.com"><img src="./resources/img/twitter.png"/></a></li>
+						<li><a href="http://www.pinterest.com"><img src="./resources/img/pinterest.png"/></a></li>
+					</ul>
+				</div>	
 		</div>
-		<!-- End of navwrapper div class -->
-	</div>
-	<!-- End of cover div class -->
+		</div>
+		</div>
 </h:body>
 </html>
