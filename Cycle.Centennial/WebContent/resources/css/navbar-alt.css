@@ -7,7 +7,7 @@
   padding-bottom: 0px;
 }
 .navwrapper .navbar-toggle {
-  padding: 10px;
+  padding: 1px;
   margin: 20px 15px 20px 0;
 }
 
@@ -80,4 +80,8 @@ color: #9CFF00;
 
 #nav-link {
     padding-top: 5px;
+}
+
+#custom {
+	color: #E8E8E8;
 }
