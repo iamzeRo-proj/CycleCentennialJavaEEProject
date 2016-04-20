@@ -42,46 +42,32 @@
 					</div><!-- End of navbar navbar-default div class "Register" -->
 				</div><!-- End of container-fluid div class -->
 		    </nav><!-- End of navbar navbar-default div class -->
-		    <!-- Register -->
+		    <!-- Sign In -->
 			<section class="container">
-				<div class="container-page">
-					<div class="form-group"><h3 class="form-signin-heading" style="text-align: center">Join Cycle Centennial today.</h3></div>
-					<div class="col-md-6">
-	        			<div class="form-group col-lg-8"><h:inputText id="studentno" value="#{user.studentno}" pt:placeholder="Enter Student Number" class="form-control" required="true" requiredMessage="Enter Student Number"><f:validateRequired /></h:inputText></div>
-	        			<h:message for="studentno" style="color:red"></h:message>
-	         			<br />
-	         			<div class="form-group col-lg-8"><h:inputText id="fname" value="#{user.fname}" pt:placeholder="Enter First Name" class="form-control" required="true" requiredMessage="Enter First Name"><f:validateRequired /></h:inputText></div>
-	        			<h:message for="fname" style="color:red"></h:message>
-	         			<br />
-	         			<div class="form-group col-lg-8"><h:inputText id="lname" value="#{user.lname}" pt:placeholder="Enter Last Name" class="form-control" required="true" requiredMessage="Enter Last Name"><f:validateRequired /></h:inputText></div>
-	        			<h:message for="lname" style="color:red"></h:message>
-	         			<br />
-	         			<div class="form-group col-lg-8"><h:inputText id="address" value="#{user.address}" pt:placeholder="Enter Address" class="form-control" required="true" requiredMessage="Enter Address"><f:validateRequired /></h:inputText></div>
-	        			<h:message for="address" style="color:red"></h:message>
-	         			<br />
-	         			<div class="form-group col-lg-8"><h:inputText id="city" value="#{user.city}" pt:placeholder="Enter City" class="form-control" required="true" requiredMessage="Enter City"><f:validateRequired /></h:inputText></div>
-	        			<h:message for="city" style="color:red"></h:message>
-	         			<br />
-					</div>
-					
-					<div class="col-md-6">
-						<h:inputText id="province" value="#{user.province}" pt:placeholder="Enter Province" class="form-control" required="true" requiredMessage="Enter Province"><f:validateRequired /></h:inputText>
-	        			<h:message for="province" style="color:red"></h:message>
-	         			<br />
-	         			<h:inputText id="postalcode" value="#{user.postalcode}" pt:placeholder="Enter Postal Code" class="form-control" required="true" requiredMessage="Enter Postal Code"><f:validateRequired /></h:inputText>
-	        			<h:message for="postalcode" style="color:red"></h:message>
-	         			<br />
-	         			<h:inputText id="contact" value="#{user.contact}" pt:placeholder="Enter Contact Number" class="form-control" required="true" requiredMessage="Enter Contact Number"><f:validateRequired /></h:inputText>
-	        			<h:message for="contact" style="color:red"></h:message>
-	         			<br />
-	         			<h:inputText id="email" value="#{user.email}" pt:placeholder="Enter Email Address" class="form-control" required="true" requiredMessage="Enter Email Address"><f:validateRequired /></h:inputText>
-	        			<h:message for="email" style="color:red"></h:message>
-	         			<br />
-	         			<h:inputSecret id="password" value="#{user.contact}" pt:placeholder="Enter Password" class="form-control" required="true" requiredMessage="Enter Password"><f:validateRequired /></h:inputSecret>
-	        			<h:message for="password" style="color:red"></h:message>
-	         			<br />
-					</div>	 
-						<div class="form-group col-md-2"><h:commandButton action="#{user.add}" value="Register" class="btn btn-lg btn-primary btn-block"></h:commandButton></div>
+				<h3 class="form-signin-heading" style="text-align: center">Join Cycle Centennial today</h3>
+				<div class="form-signin">
+        			<h:inputText id="id" value="#{user.id}" pt:placeholder="Enter Student Number" class="form-control" required="true" requiredMessage="Enter Student Number"><f:validateRequired /></h:inputText>
+        			<h:message for="id" style="color:red"></h:message>
+         			<br />
+         			<h:inputText id="firstName" value="#{user.firstName}" pt:placeholder="Enter First Name" class="form-control" required="true" requiredMessage="Enter First Name"><f:validateRequired /></h:inputText>
+        			<h:message for="firstName" style="color:red"></h:message>
+         			<br />
+         			<h:inputText id="lastName" value="#{user.lastName}" pt:placeholder="Enter Last Name" class="form-control" required="true" requiredMessage="Enter Last Name"><f:validateRequired /></h:inputText>
+        			<h:message for="lastName" style="color:red"></h:message>
+         			<br />
+         			<h:inputText id="address" value="#{user.address}" pt:placeholder="Enter Address" class="form-control" required="true" requiredMessage="Enter Address"><f:validateRequired /></h:inputText>
+        			<h:message for="address" style="color:red"></h:message>
+         			<br />
+         			<h:inputText id="phone" value="#{user.phone}" pt:placeholder="Enter Contact Number" class="form-control" required="true" requiredMessage="Enter Contact Number"><f:validateRequired /></h:inputText>
+        			<h:message for="phone" style="color:red"></h:message>
+         			<br />
+         			<h:inputText id="email" value="#{user.email}" pt:placeholder="Enter Email Address" class="form-control" required="true" requiredMessage="Enter Email Address"><f:validateRequired /></h:inputText>
+        			<h:message for="email" style="color:red"></h:message>
+         			<br />
+         			<h:inputSecret id="password" value="#{user.password}" pt:placeholder="Enter Password" class="form-control" required="true" requiredMessage="Enter Password"><f:validateRequired /></h:inputSecret>
+        			<h:message for="password" style="color:red"></h:message>
+         			<br />
+         			<h:commandButton action="#{user.add}" value="Register" class="btn btn-lg btn-primary btn-block"></h:commandButton> 
 				</div>
 			</section><!-- End of Sign in container -->
     	</div><!-- End of navwrapper -->

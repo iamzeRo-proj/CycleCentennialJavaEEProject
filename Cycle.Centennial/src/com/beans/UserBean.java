@@ -10,6 +10,7 @@ public class UserBean {
 	private String phone;
 	private String email;
 	private String address;
+	private String password;
 
 	public int getId() {
 		return id;
@@ -57,6 +58,14 @@ public class UserBean {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
