@@ -1,12 +1,17 @@
 package com.service;
 
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.beans.BikeInfoBean;
+import com.dao.BikeDAO;
 import com.dao.BikeInfoDAO;
 
 /**
@@ -43,13 +48,16 @@ public class ReserveBikeServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String location = request.getParameter("location");
 		BikeInfoDAO bikeInfoDao = new BikeInfoDAO();
-
-		if (bikeInfoDao.getBikeInfo("available",location).size() > 0) {
-			
+		List<BikeInfoBean> bikesList = new LinkedList<>();
+		bikesList = bikeInfoDao.getBikeInfo("available", location);
+		if (bikesList.size() > 0) {
+			int id = bikesList.get(0).getId();
+			BikeDAO bikeDAO = new BikeDAO();
+			bikeDAO.updateBikeUnavailable(id);
 			response.sendRedirect("/Cycle.Centennial/faces/payment.xhtml");
-			
-		}else{
-			response.getWriter().append("the location you choose:" + location+" there is no more available bikes");
+
+		} else {
+			response.getWriter().append("the location you choose:" + location + " there is no more available bikes");
 		}
 	}
 
