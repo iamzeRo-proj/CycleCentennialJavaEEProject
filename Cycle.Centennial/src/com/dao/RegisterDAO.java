@@ -55,4 +55,45 @@ public class RegisterDAO {
 	         }//end finally try
 	      } //end try
 	}
+
+	public static void Register(int id, String lastName, String firstName, String email, String phone, String address,
+			String password) {
+		Connection con = null;
+		PreparedStatement ps = null;
+
+		try {
+			con = DataConnect.getConnection();
+			String query = "INSERT INTO memberinfo (id,LastName,FirstName,ContactNumber,Email,"
+					+ "Address,Password)" + "Values(?,?,?,?,?,?,?)";
+			ps = con.prepareStatement(query);
+			ps.setInt(1, id);
+			ps.setString(2, lastName);
+			ps.setString(3, firstName);
+			ps.setString(4, email);
+			ps.setString(5, phone);
+			ps.setString(6, address);
+			ps.setString(7, password);
+			
+
+			int result = ps.executeUpdate();
+
+		
+			}
+		catch(SQLException se){
+	         //Handle errors for JDBC
+	         se.printStackTrace();
+	      }catch(Exception e){
+	         //Handle errors for Class.forName
+	         e.printStackTrace();
+	      }finally{
+	         //finally block used to close resources
+	         try{
+	            if(con!=null)
+	            con.close();
+	         }catch(SQLException se){
+	            se.printStackTrace();
+	         }//end finally try
+	      } //end try
+		
+	}
 }

@@ -46,6 +46,7 @@
 			<section class="container">
 				<h3 class="form-signin-heading" style="text-align: center">Join Cycle Centennial today</h3>
 				<div class="form-signin">
+				<h:form>
         			<h:inputText id="id" value="#{user.id}" pt:placeholder="Enter Student Number" class="form-control" required="true" requiredMessage="Enter Student Number"><f:validateRequired /></h:inputText>
         			<h:message for="id" style="color:red"></h:message>
          			<br />
@@ -68,6 +69,7 @@
         			<h:message for="password" style="color:red"></h:message>
          			<br />
          			<h:commandButton action="#{user.add}" value="Register" class="btn btn-lg btn-primary btn-block"></h:commandButton> 
+         		</h:form>
 				</div>
 			</section><!-- End of Sign in container -->
     	</div><!-- End of navwrapper -->

@@ -2,6 +2,8 @@ package com.beans;
 
 import javax.faces.bean.ManagedBean;
 
+import com.dao.RegisterDAO;
+
 @ManagedBean(name = "user")
 public class UserBean {
 	private int id;
@@ -59,7 +61,7 @@ public class UserBean {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
@@ -68,4 +70,7 @@ public class UserBean {
 		this.password = password;
 	}
 
+	public void add() {
+		RegisterDAO.Register(id, lastName, firstName,  email, phone, address,  password);
+	}
 }
