@@ -56,11 +56,11 @@ public class RegisterDAO {
 	      } //end try
 	}
 
-	public static void Register(int id, String lastName, String firstName, String email, String phone, String address,
+	public static int Register(int id, String lastName, String firstName, String email, String phone, String address,
 			String password) {
 		Connection con = null;
 		PreparedStatement ps = null;
-
+		int result=-1;
 		try {
 			con = DataConnect.getConnection();
 			String query = "INSERT INTO memberinfo (id,LastName,FirstName,ContactNumber,Email,"
@@ -75,7 +75,7 @@ public class RegisterDAO {
 			ps.setString(7, password);
 			
 
-			int result = ps.executeUpdate();
+			result = ps.executeUpdate();
 
 		
 			}
@@ -94,6 +94,6 @@ public class RegisterDAO {
 	            se.printStackTrace();
 	         }//end finally try
 	      } //end try
-		
+		return result;
 	}
 }

@@ -70,7 +70,10 @@ public class UserBean {
 		this.password = password;
 	}
 
-	public void add() {
-		RegisterDAO.Register(id, lastName, firstName,  email, phone, address,  password);
+	public String add() {
+		int result = RegisterDAO.Register(id, lastName, firstName,  email, phone, address,  password);
+			return "login";
+
+		
 	}
 }
