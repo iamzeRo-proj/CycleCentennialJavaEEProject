@@ -10,18 +10,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	
-    <title>Welcome</title>
+    <title>Home</title>
     
     <!-- Core Bootstrap -->
     <h:outputStylesheet library="css" name="bootstrap.css" />
     <!-- Navbar CSS -->
     <h:outputStylesheet library="css" name="navbar-alt.css" />
     <!-- Core CSS -->
-    <h:outputStylesheet library="css" name="main.css" />
-    
+    <h:outputStylesheet library="css" name="main.css" />  
 </h:head>
 <h:body>
-<nav class="navbar navbar-default">
+	<div id="register">
+		<div class="navwrapper">
+			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
@@ -33,28 +34,37 @@
                 		</button>
                 		<a class="navbar-brand" href="login.xhtml"><img id="brand-image" src="./resources/img/cycleCentennial-logo.png"/></a>
                 		<ul class="nav navbar-nav">
-                			<li><a href="/Cycle.Centennial/StationMap.jsp">Make a Reservation</a></li>
+                			<li><a href="/Cycle.Centennial/StationMap.jsp"><h5>Reserve Bike</h5></a></li>
+                			<li><a href="about.html"><h5>About</h5></a></li>
                 		</ul>
 					</div><!-- End of navbar-header div class -->
-					<div class="navbar col-lg-11">
-					<h:form>
+					<div class="navbar col-md-8">
+					
 						<ul class="nav navbar-nav navbar-right">
-              				<li><h:commandLink action="#{login.logout}" value="Logout"></h:commandLink></li>
+              				<li style="margin: 30px 0 0 0;"><h5 style="color: #E8E8E8;"><h:outputLink action="#{login.logout()}"><h:outputText id="custom" value="Logout" /></h:outputLink></h5></li>
               			</ul>
-					</h:form>
-            		
 					</div><!-- End of navbar navbar-default div class "Register" -->
 				</div><!-- End of container-fluid div class -->
 		    </nav><!-- End of navbar navbar-default div class -->
-<h1>User Profile</h1>
-    <h:form>
-        <p>Welcome #{sessionScope.username}</p>
-        <p>Your user number: #{sessionScope.user.id}</p>
-        <p>Your Email address: #{sessionScope.user.email}</p>
-        <p>Your phone number: #{sessionScope.user.phone}</p>
-        <p>Your address: #{sessionScope.user.address}</p>
-    </h:form>
-    
-    <p></p>
+		    <h3>Profile</h3>
+			    <h:form>
+			        <h1>Welcome Back, #{sessionScope.username} !</h1><br /><br />
+			        <h4>Your user number: #{sessionScope.user.id}</h4><br />
+			        <h4>Your Email address: #{sessionScope.user.email}</h4><br />
+			        <h4>Your phone number: #{sessionScope.user.phone}</h4><br />
+			        <h4>Your address: #{sessionScope.user.address}</h4><br />
+			    </h:form>
+			<!-- Footer -->	
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+				<div id="socialMedia-alt">
+					<ul>
+						<li><p>Let's get social !</p></li>
+						<li><a href="http://www.facebook.com"><img src="./resources/img/facebook.png"/></a></li>
+						<li><a href="http://www.twitter.com"><img src="./resources/img/twitter.png"/></a></li>
+						<li><a href="http://www.pinterest.com"><img src="./resources/img/pinterest.png"/></a></li>
+					</ul>
+				</div>	
+		</div>
+	</div>
 </h:body>
 </html>
