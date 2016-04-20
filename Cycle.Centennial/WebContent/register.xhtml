@@ -1,25 +1,29 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
 <h:head>
+	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
     <title>Cycle.Centennial College</title>
+    
     <!-- Core Bootstrap -->
     <h:outputStylesheet library="css" name="bootstrap.css" />
     <!-- Navbar CSS -->
-    <h:outputStylesheet library="css" name="navbar.css" />
+    <h:outputStylesheet library="css" name="navbar-alt.css" />
     <!-- Core CSS -->
     <h:outputStylesheet library="css" name="main.css" />    
 </h:head>
 <h:body>
-    <div class="cover">
-		<!-- Navbar -->
-		<div class="navwrapper">
-			<nav class="navbar navbar-default">
+    <div id="register">
+    	<div class="navwrapper">
+    		<!-- Navbar -->
+    		<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
@@ -31,89 +35,56 @@
                 		</button>
                 		<a class="navbar-brand" href="login.xhtml"><img id="brand-image" src="./resources/img/cycleCentennial-logo.png"/></a>
 					</div><!-- End of navbar-header div class -->
-					<div id="navbar" class="navbar navbar-default">
-            		<ul class="nav navbar-nav">
-              			<li><a href="login.xhtml"><h5>Home</h5></a></li>
+					<div class="navbar col-lg-11">
+            		<ul class="nav navbar-nav navbar-right">
+              			<li><a href="login.xhtml"><h5>Already have an account? Login</h5></a></li>
               		</ul>
 					</div><!-- End of navbar navbar-default div class "Register" -->
 				</div><!-- End of container-fluid div class -->
 		    </nav><!-- End of navbar navbar-default div class -->
-		<!-- Sign In -->
-			<br /><br /><br />
-			<div class="container" id="register">
-				<h2>Register CycleCentennial</h2><br />
-				<f:view>  
-        			<h:form id="registerForm">  
-            			<table>  
-                			<tr>  
-                    			<td><h:outputText value="Student Number: " /></td>  
-                    			<td><h:inputText id="studentno" value="#{user.studentno}"  
-                         		   required="true" requiredMessage="Enter Student Number" /></td>  
-                   				<td><h:message for="studentno" style="color:red" /></td>  
-                			</tr>
-                			<tr>  
-                    			<td><h:outputText value="First Name: " /></td>  
-                    			<td><h:inputText id="fname" value="#{user.fname}"  
-                         		   required="true" requiredMessage="Enter First Name" /></td>  
-                   				<td><h:message for="fname" style="color:red" /></td>  
-                			</tr>
-                			<tr>  
-                    			<td><h:outputText value="Last Name: " /></td>  
-                    			<td><h:inputText id="lname" value="#{user.lname}"  
-                         		   required="true" requiredMessage="Enter Last Name" /></td>  
-                   				<td><h:message for="lname" style="color:red" /></td>  
-                			</tr>
-                			<tr>  
-                    			<td><h:outputText value="Address: " /></td>  
-                    			<td><h:inputText id="address" value="#{user.address}"  
-                         		   required="true" requiredMessage="Enter Address" /></td>  
-                   				<td><h:message for="address" style="color:red" /></td>  
-                			</tr>
-                			<tr>  
-                    			<td><h:outputText value="City: " /></td>  
-                    			<td><h:inputText id="city" value="#{user.city}"  
-                         		   required="true" requiredMessage="Enter City" /></td>  
-                   				<td><h:message for="city" style="color:red" /></td>  
-                			</tr>
-                			<tr>  
-                    			<td><h:outputText value="Province: " /></td>  
-                    			<td><h:inputText id="province" value="#{user.province}"  
-                         		   required="true" requiredMessage="Enter Province" /></td>  
-                   				<td><h:message for="province" style="color:red" /></td>  
-                			</tr>
-                			<tr>  
-                    			<td><h:outputText value="Postal Code: " /></td>  
-                    			<td><h:inputText id="postalcode" value="#{user.postalcode}"  
-                         		   required="true" requiredMessage="Enter Postal Code" /></td>  
-                   				<td><h:message for="postalcode" style="color:red" /></td>  
-                			</tr>
-                			<tr>  
-                    			<td><h:outputText value="Contact:" /></td>  
-                    			<td><h:inputText id="contact" value="#{user.contact}"  
-                            		required="true" requiredMessage="Enter Contact Number" /></td>  
-                    			<td><h:message for="contact" style="color:red" /></td>  
-                			</tr>
-                			<tr>  
-                    			<td><h:outputText value="Email ID:" /></td>  
-                    			<td><h:inputText id="email" value="#{user.email}"  
-                            		required="true" requiredMessage="Enter Centnnial Email" /></td>  
-                    			<td><h:message for="email" style="color:red" /></td>  
-                			</tr>
-                			<tr>  
-                    			<td><h:outputText value="Password :" /></td>  
-                    			<td><h:inputSecret id="psw" value="#{user.password}"  
-                           			required="true" requiredMessage="Please enter your password" /></td>  
-                    			<td><h:message for="psw" style="color:red" /></td>  
-                			</tr>
-                			<tr>  
-                    			<td />  
-                    			<td><h:commandButton value="Register" action="#{user.add}" /></td>  
-                			</tr>     
-              			</table>  
-        			</h:form><!-- End of form -->  
-    			</f:view><!-- End of view -->
-			</div><!-- End of container div class -->
-		</div><!-- End of navwrapper div class -->
-	</div><!-- End of cover div class -->
+		    <!-- Register -->
+			<section class="container">
+				<div class="container-page">
+					<div class="form-group"><h3 class="form-signin-heading" style="text-align: center">Join Cycle Centennial today.</h3></div>
+					<div class="col-md-6">
+	        			<div class="form-group col-lg-8"><h:inputText id="studentno" value="#{user.studentno}" pt:placeholder="Enter Student Number" class="form-control" required="true" requiredMessage="Enter Student Number"><f:validateRequired /></h:inputText></div>
+	        			<h:message for="studentno" style="color:red"></h:message>
+	         			<br />
+	         			<div class="form-group col-lg-8"><h:inputText id="fname" value="#{user.fname}" pt:placeholder="Enter First Name" class="form-control" required="true" requiredMessage="Enter First Name"><f:validateRequired /></h:inputText></div>
+	        			<h:message for="fname" style="color:red"></h:message>
+	         			<br />
+	         			<div class="form-group col-lg-8"><h:inputText id="lname" value="#{user.lname}" pt:placeholder="Enter Last Name" class="form-control" required="true" requiredMessage="Enter Last Name"><f:validateRequired /></h:inputText></div>
+	        			<h:message for="lname" style="color:red"></h:message>
+	         			<br />
+	         			<div class="form-group col-lg-8"><h:inputText id="address" value="#{user.address}" pt:placeholder="Enter Address" class="form-control" required="true" requiredMessage="Enter Address"><f:validateRequired /></h:inputText></div>
+	        			<h:message for="address" style="color:red"></h:message>
+	         			<br />
+	         			<div class="form-group col-lg-8"><h:inputText id="city" value="#{user.city}" pt:placeholder="Enter City" class="form-control" required="true" requiredMessage="Enter City"><f:validateRequired /></h:inputText></div>
+	        			<h:message for="city" style="color:red"></h:message>
+	         			<br />
+					</div>
+					
+					<div class="col-md-6">
+						<h:inputText id="province" value="#{user.province}" pt:placeholder="Enter Province" class="form-control" required="true" requiredMessage="Enter Province"><f:validateRequired /></h:inputText>
+	        			<h:message for="province" style="color:red"></h:message>
+	         			<br />
+	         			<h:inputText id="postalcode" value="#{user.postalcode}" pt:placeholder="Enter Postal Code" class="form-control" required="true" requiredMessage="Enter Postal Code"><f:validateRequired /></h:inputText>
+	        			<h:message for="postalcode" style="color:red"></h:message>
+	         			<br />
+	         			<h:inputText id="contact" value="#{user.contact}" pt:placeholder="Enter Contact Number" class="form-control" required="true" requiredMessage="Enter Contact Number"><f:validateRequired /></h:inputText>
+	        			<h:message for="contact" style="color:red"></h:message>
+	         			<br />
+	         			<h:inputText id="email" value="#{user.email}" pt:placeholder="Enter Email Address" class="form-control" required="true" requiredMessage="Enter Email Address"><f:validateRequired /></h:inputText>
+	        			<h:message for="email" style="color:red"></h:message>
+	         			<br />
+	         			<h:inputSecret id="password" value="#{user.contact}" pt:placeholder="Enter Password" class="form-control" required="true" requiredMessage="Enter Password"><f:validateRequired /></h:inputSecret>
+	        			<h:message for="password" style="color:red"></h:message>
+	         			<br />
+					</div>	 
+						<div class="form-group col-md-2"><h:commandButton action="#{user.add}" value="Register" class="btn btn-lg btn-primary btn-block"></h:commandButton></div>
+				</div>
+			</section><!-- End of Sign in container -->
+    	</div><!-- End of navwrapper -->
+    </div><!-- End of Cover -->
 </h:body>
 </html>
