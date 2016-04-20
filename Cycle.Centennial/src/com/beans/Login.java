@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
+import javax.validation.constraints.Size;
 
 import com.dao.LoginDAO;
 
@@ -16,8 +17,12 @@ public class Login implements Serializable {
 
 	private static final long serialVersionUID = 1094801825228386363L;
 
+	@Size(min = 4, message = "**please enter a valid password")
 	private String pwd;
+	
 	private String msg;
+	
+	@Size(min = 8, max = 10, message = "**Username must be 9 characters")
 	private String user;
 
 	public String getPwd() {
