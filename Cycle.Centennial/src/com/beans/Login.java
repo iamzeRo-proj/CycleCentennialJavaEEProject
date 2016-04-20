@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.constraints.Size;
 
 import com.dao.LoginDAO;
+import com.util.UserUtil;
 
 @ManagedBean
 @SessionScoped
@@ -52,7 +53,7 @@ public class Login implements Serializable {
 	// validate login
 	public String validateUsernamePassword() {
 		if (validateCheckCode()) {
-			UserBean userBean = LoginDAO.validate(user, pwd);
+			UserBean userBean = LoginDAO.validate(user, UserUtil.conver2MD5(pwd));
 			if (userBean.getFirstName()!=null) {
 				HttpSession session = SessionBean.getSession();
 				session.setAttribute("username", userBean.getFirstName()+" "+userBean.getLastName());

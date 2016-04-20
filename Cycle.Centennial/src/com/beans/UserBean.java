@@ -3,6 +3,7 @@ package com.beans;
 import javax.faces.bean.ManagedBean;
 
 import com.dao.RegisterDAO;
+import com.util.UserUtil;
 
 @ManagedBean(name = "user")
 public class UserBean {
@@ -71,7 +72,7 @@ public class UserBean {
 	}
 
 	public String add() {
-		int result = RegisterDAO.Register(id, lastName, firstName,  email, phone, address,  password);
+		int result = RegisterDAO.Register(id, lastName, firstName,  email, phone, address,  UserUtil.conver2MD5(password));
 			return "login";
 
 		
