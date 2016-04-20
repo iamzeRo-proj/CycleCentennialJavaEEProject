@@ -8,11 +8,17 @@
     <title>Welcome</title>
 </h:head>
 <h:body>
+<h1>User Profile</h1>
     <h:form>
-        <p>Welcome #{login.user}</p>
+        <p>Welcome #{sessionScope.username}</p>
+        <p>Your user number: #{sessionScope.user.id}</p>
+        <p>Your Email address: #{sessionScope.user.email}</p>
+        <p>Your phone number: #{sessionScope.user.phone}</p>
+        <p>Your address: #{sessionScope.user.address}</p>
         <h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
+        <a href="/Cycle.Centennial/StationMap.jsp">Make a Reservation</a>
     </h:form>
-    <h1>User Profile</h1>
+    
     <p></p>
 </h:body>
 </html>
