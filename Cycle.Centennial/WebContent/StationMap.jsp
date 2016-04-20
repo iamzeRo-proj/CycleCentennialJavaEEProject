@@ -95,7 +95,7 @@
 									<td>
 										<select name="location">
 											  <option value="progress">Progress</option>
-											  <option value="ashtonbeesh">Ashtonbee</option>
+											  <option value="ashtonbee">Ashtonbee</option>
 											  <option value="morningside">Morningside</option>
 										</select>
 									</td>
@@ -122,7 +122,7 @@
 					</div>
 					<div class="col-md-3">
 						<table>
-							<tr><td><h4>  Progress Campus Station Map</h4><td></tr>
+							<tr><td><h4>  Morningside Campus Station Map</h4><td></tr>
 							<tr><td>Total Bikes at this Station: <% out.println(bikeDao.getBikeInfo("morningside").size()); %></td></tr>
 							<tr><td>Available Bikes: <% out.println(bikeDao.getBikeInfo("available","morningside").size()); %></td></tr>
 							<tr><td>Out of Service:<% out.println(bikeDao.getBikeInfo("out","morningside").size()); %></td></tr>
