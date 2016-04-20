@@ -15,7 +15,7 @@
 	<navigation-rule>
 		<from-view-id>payment.xhtml</from-view-id>
 		<navigation-case>
-			<from-action>#{PaymentBean.insertToDB}</from-action>
+			<from-action>#{payment.insertToDB}</from-action>
 			<from-outcome>receipt</from-outcome>
 			<to-view-id>/receipt.xhtml</to-view-id>
 		</navigation-case>
