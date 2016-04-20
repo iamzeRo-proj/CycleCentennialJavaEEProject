@@ -46,6 +46,7 @@ public class ReserveBikeServlet extends HttpServlet {
 
 		if (bikeInfoDao.getBikeInfo("available",location).size() > 0) {
 			response.sendRedirect("/Cycle.Centennial/faces/payment.xhtml");
+			
 		}else{
 			response.getWriter().append("the location you choose:" + location+" there is no more available bikes");
 		}

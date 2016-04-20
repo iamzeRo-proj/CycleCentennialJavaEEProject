@@ -122,11 +122,11 @@ public class PaymentBean {
 		this.amount = calAmount;
 		this.paymentId=GeneratePaymentID();
 
-		// HttpSession session = SessionBean.getSession();
-		// userId = (Integer) session.getAttribute("userid");
-		// userName=session.getAttribute("userName").toString();
+		 HttpSession session = SessionBean.getSession();
+		 UserBean userBean = (UserBean) session.getAttribute("user");
+		 userId = userBean.getId();
+		 userName = userBean.getFirstName()+" "+userBean.getLastName();
 
-		int userId= 300748503;
 		 PaymentDAO.InsertToPayinfo(ccNumber, userId, ccType, ccExpiryDate,holderName, amount, paymentId);
 
 		return "receipt";
@@ -135,18 +135,8 @@ public class PaymentBean {
 	
 	public int GeneratePaymentID()
 	{
-		int randomID = 0;
-		 ArrayList<Integer> list = new ArrayList<Integer>();
-	        for (int i=1; i<11; i++) {
-	            list.add(new Integer(i));
-	        }
-	        Collections.shuffle(list);
-	        for (int i=0; i<1; i++) {
-	        	
-	        	randomID=list.get(i);
-	        	
-	        	
-	        }
+		
+		int randomID = new Random().nextInt(999999999);
 	        return randomID;
 	}
 }
