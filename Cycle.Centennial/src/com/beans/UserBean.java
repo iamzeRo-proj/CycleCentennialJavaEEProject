@@ -65,7 +65,7 @@ public class UserBean {
 	}
 
 	public void setPassword(String password) {
-		this.address = password;
+		this.password = password;
 	}
 
 }
