@@ -1,21 +1,68 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" 
-      xmlns:ui="http://java.sun.com/jsf/facelets" 
-      xmlns:h="http://java.sun.com/jsf/html" 
-      xmlns:f="http://java.sun.com/jsf/core">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
    <h:head>
-   <title>Receipt</title>
+   <meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+   <title>Confirmation</title>
+   
+   <!-- Core Bootstrap -->
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<!-- Navbar CSS -->
+	<h:outputStylesheet library="css" name="navbar-alt.css" />
+	<!-- Core CSS -->
+	<h:outputStylesheet library="css" name="main.css" />
    </h:head>
    
    <h:body>
-   Membership Type: <h:outputText value="#{payment.memberShipType}" /><br />
-   Card Holder Name: <h:outputText value="#{payment.holderName}" /><br />
-   Amount: <h:outputText value="#{payment.amount}" /><br />
-   Card Number:<h:outputText value="#{payment.ccNumber}" /><br />
-   Expiry Date:<h:outputText value="#{payment.ccExpiryDate}" /><br />
-   Card Type:<h:outputText value="#{payment.ccType}" /><br />
-   Payment ID:<h:outputText value="#{payment.paymentId}" /><br />
+   <div id="register">
+   		<div class="navwrapper">
+   			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    		<span class="sr-only">Toggle navigation</span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                    		<span class="icon-bar"></span>
+                		</button>
+                		<a class="navbar-brand" href="login.xhtml"><img id="brand-image" src="./resources/img/cycleCentennial-logo.png"/></a>
+                		<ul class="nav navbar-nav">
+                			<li><a href="/Cycle.Centennial/faces/admin.xhtml"><h5>Home</h5></a></li>
+                			<li><a href="/Cycle.Centennial/StationMap.jsp"><h5>Reserve Bike</h5></a></li>
+              				<li><a href="about.html"><h5>About</h5></a></li>
+                		</ul>
+					</div><!-- End of navbar-header div class -->
+				</div><!-- End of container-fluid div class -->
+		    </nav><!-- End of navbar navbar-default div class -->
+		    <h1>Here are the details of your membership </h1><br />
+		   <h5>Membership Type: <h:outputText value="#{payment.memberShipType}" /></h5><br />
+		   <h5>Card Holder Name: <h:outputText value="#{payment.holderName}" /></h5><br />
+		   <h5>Amount: <h:outputText value="#{payment.amount}" /></h5><br />
+		   <h5>Card Number:<h:outputText value="#{payment.ccNumber}" /></h5><br />
+		   <h5>Expiry Date:<h:outputText value="#{payment.ccExpiryDate}" /></h5><br />
+		   <h5>Card Type:<h:outputText value="#{payment.ccType}" /></h5><br />
+		   <h5>Payment ID:<h:outputText value="#{payment.paymentId}" /></h5><br />
+		   <!-- Footer -->	
+			<br /><br /><br /><br /><br /><br /><br /><br />
+				<div id="socialMedia-alt">
+					<ul>
+						<li><p>Let's get social !</p></li>
+						<li><a href="http://www.facebook.com"><img src="./resources/img/facebook.png"/></a></li>
+						<li><a href="http://www.twitter.com"><img src="./resources/img/twitter.png"/></a></li>
+						<li><a href="http://www.pinterest.com"><img src="./resources/img/pinterest.png"/></a></li>
+					</ul>
+				</div>	
+   		</div>
+   </div>
+   
    
    
    </h:body>

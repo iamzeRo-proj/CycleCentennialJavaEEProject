@@ -67,7 +67,8 @@
          			<h:inputSecret id="password" value="#{user.password}" pt:placeholder="Enter Password" class="form-control" required="true" requiredMessage="Enter Password"><f:validateRequired /></h:inputSecret>
         			<h:message for="password" style="color:red"></h:message>
          			<br />
-         			<h:commandButton action="#{user.add}" value="Register" class="btn btn-lg btn-primary btn-block"></h:commandButton> 
+         			<h:commandButton action="#{user.add}" value="Sign Up" class="btn btn-lg btn-primary btn-block"></h:commandButton><br />
+         			<p>By signing up, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>, including Cookie Use. Others will be able to find you by email or phone number when provided.</p> 
 				</div>
 			</section><!-- End of Sign in container -->
     	</div><!-- End of navwrapper -->
